@@ -5,17 +5,25 @@
     height: 100vh;
 
     mat-card {
-        height: 360px;
+        height: 400px;
         width: 400px;
         padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
         mat-card-header {
             display: flex;
             justify-content: center;
+
+            mat-card-title {
+                padding: 20px;
+                font-weight: 500;
+                font-size: 2rem;
+            }
         }
         mat-card-content {
+
             form {
                 display: flex;
                 flex-direction: column;
