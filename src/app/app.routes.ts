@@ -18,6 +18,7 @@ export const routes: Routes = [
         children: [
             {
                 path: 'dashboard',
+                title: 'Dashboard',
                 loadComponent: () => import('./pages/dashboard/member-dashboard/dashboard.component').then((m) => m.MemberDashboardComponent),
             }
         ]
@@ -28,8 +29,14 @@ export const routes: Routes = [
         children: [
             {
                 path: 'dashboard',
+                title: 'Dashboard',
                 loadComponent: () => import('./pages/dashboard/admin-dashboard/dashboard.component').then((m) => m.AdminDashboardComponent)
             }
         ]
-    }
+    },
+    {
+        path: '**',
+        title: 'Not found',
+        loadComponent: () => import('./pages/not-found/not-found.component').then((p) => p.NotFoundComponent)
+    },
 ];
