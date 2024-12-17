@@ -1,0 +1,22 @@
+<div class="main">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="exemple@mail.com">
+          <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput placeholder="mypassword">
+          <mat-icon matSuffix>password</mat-icon>
+        </mat-form-field>
+        <button [disabled]="loginForm.invalid" mat-flat-button>LOGIN</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
