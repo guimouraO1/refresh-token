@@ -1,8 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { firstValueFrom } from 'rxjs';
-import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
+import { User } from '../../../models/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +9,7 @@ import { User } from '../../models/user.model';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent implements OnInit {
+export class MemberDashboardComponent implements OnInit {
   userService = inject(UserService);
   user: User | undefined;
 

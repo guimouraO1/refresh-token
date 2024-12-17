@@ -5,14 +5,14 @@
 
 html {
   color-scheme: light dark;
-  @include mat.theme((color: (theme-type: light,
+  @include mat.theme((color: (
         primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
+        tertiary: mat.$blue-palette
       ),
       typography: Roboto,
       density: 0,
     ));
-}
+};
 
 body {
   background-color: #ebebeb;
@@ -20,8 +20,4 @@ body {
   margin: 0;
   padding: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-html.dark-mode, body.dark-mode {
-  color-scheme: dark;
 }

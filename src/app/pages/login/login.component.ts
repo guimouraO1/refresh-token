@@ -10,6 +10,8 @@ import { UserService } from '../../services/user.service';
 import { firstValueFrom } from 'rxjs';
 import { Router } from '@angular/router';
 import { ResponseToken } from '../../models/response-token.model';
+import { TokenService } from '../../services/token.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -18,10 +20,12 @@ import { ResponseToken } from '../../models/response-token.model';
   styleUrl: './login.component.scss',
   standalone: true
 })
+
 export class LoginComponent {
   loginForm: FormGroup;
   userService =  inject(UserService);
   router = inject(Router);
+  tokenService = inject(TokenService);
 
   constructor() {
     this.loginForm = new FormGroup({
@@ -33,8 +37,9 @@ export class LoginComponent {
   async onSubmit() {
     const res: ResponseToken = await firstValueFrom(this.userService.onLogin(this.loginForm.value));
 
-    localStorage.setItem('AccessToken', res.token);
+    localStorage.setItem(TokenService.LOCAL_STORAGE_TOKEN_KEY, res.token);
+    const user: User = this.tokenService.decodePayloadJWT();
 
-    this.router.navigate(['dashboard']);
+    this.router.navigate([user.role.toString().toLowerCase(), 'dashboard']);
   }
 }
