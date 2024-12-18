@@ -15,7 +15,7 @@ export class UserService {
   http = inject(HttpClient)
 
   onLogin(loginForm: any) {
-    return this.http.post<ResponseToken>(`${environment.apiUrl}/sessions`, loginForm, {withCredentials: true});
+    return this.http.post<ResponseToken>(`${environment.apiUrl}/auth/session`, loginForm, {withCredentials: true});
   }
 
   getRefreshToken() {
@@ -25,6 +25,6 @@ export class UserService {
   getMe() {
     const headers = this.mainService.setupRequestHeader();
 
-    return this.http.get<User>(`${environment.apiUrl}/me`, {headers});
+    return this.http.get<User>(`${environment.apiUrl}/user`, {headers});
   }
 }
