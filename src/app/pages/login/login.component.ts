@@ -39,7 +39,7 @@ export class LoginComponent {
 
     localStorage.setItem(TokenService.LOCAL_STORAGE_TOKEN_KEY, res.token);
     const user: User = this.tokenService.decodePayloadJWT();
-
+    this.userService.isUserAuthenticated.next(true);
     this.router.navigate([user.role.toString().toLowerCase(), 'dashboard']);
   }
 }

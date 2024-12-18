@@ -1,4 +1,6 @@
-<div class="main">
-    <p>Not Found</p>
-    <button [routerLink]="['/login']" routerLinkActive="router-link-active"  mat-flat-button accent>Return to Login Page</button>
+<div class="h-screen flex items-center justify-center">
+    <div class="flex flex-col gap-8 items-center">
+        <span class="text-7xl font-extrabold">Page Not Found...</span>
+        <button [routerLink]="['/login']" class="btn btn-error px-12">Return to login</button>
+    </div>
 </div>

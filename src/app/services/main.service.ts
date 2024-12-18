@@ -8,7 +8,6 @@ import { TokenService } from './token.service';
 })
 export class MainService {
     static GENERIC_ERROR = 'internalServerError';
-    protected MAIN_API_PATH = environment.apiUrl;
 
     setupRequestHeader() {
         const token = localStorage.getItem(TokenService.LOCAL_STORAGE_TOKEN_KEY);

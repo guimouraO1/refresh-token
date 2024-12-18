@@ -1,3 +1,6 @@
-<main class="bg-@white dark:bg-@dark" >
+<main class="bg-@white dark:bg-@dark">
+    @if(isUserAuthenticated) {
+        <app-nav/>
+    }
     <router-outlet />
 </main>

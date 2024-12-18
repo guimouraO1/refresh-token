@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { firstValueFrom } from 'rxjs';
 import { User } from '../../../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,13 +1,11 @@
 <div class="h-screen flex items-center justify-center">
-  <div class="w-96 h-80 rounded p-4 flex flex-col justify-between shadow-md dark:bg-@white">
-    <span class="text-4xl self-center font-bold text-primary p-2">Sign In</span>
+  <div
+    class="w-[400px] h-[480px] rounded p-4 flex flex-col justify-between shadow-xl dark:bg-@white bg-@white border border-zinc-200">
+    <span class="text-5xl self-center font-bold text-primary pt-10">Sign <span
+        class="text-@white bg-primary rounded-md px-2"> In </span></span>
     <form class="flex flex-col gap-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label class="input input-bordered flex items-center gap-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-          class="h-4 w-4 opacity-70">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4 opacity-70">
           <path
             d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
           <path
@@ -16,19 +14,24 @@
         <input type="text" class="grow" placeholder="Email" formControlName="email" />
       </label>
       <label class="input input-bordered flex items-center gap-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-          class="h-4 w-4 opacity-70">
-          <path
-            fill-rule="evenodd"
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4 opacity-70">
+          <path fill-rule="evenodd"
             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
             clip-rule="evenodd" />
         </svg>
         <input type="password" class="grow" placeholder="password" formControlName="password" />
       </label>
-      <button [disabled]="loginForm.invalid" class="btn btn-primary mt-4">Confirm</button>
+      <button [disabled]="loginForm.invalid && loginForm.touched" class="btn btn-primary mt-4">Sign In</button>
+      <p
+        class="mt-6 opacity-40 flex items-center text-xs uppercase before:flex-1 before:border-t before:border-@dark dark:before:border-@dark before:me-6 after:flex-1 after:border-t after:border-@dark dark:after:border-@dark after:ms-6">
+        Or
+      </p>
+      <button type="button" class="mt-4 btn btn-wide btn-warning self-center flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-5">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+        </svg> Sign up</button>
     </form>
   </div>
 </div>
